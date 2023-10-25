@@ -1,0 +1,129 @@
+.navigation {
+    width: 100%;
+    display: flex;
+}
+
+.navigation_type_mobile {
+    justify-content: end;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .4s linear, opacity .4s ease;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+}
+
+.navigation_type_mobile_visible {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear, opacity .4s ease;
+}
+
+.navigation__list {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+}
+
+.navigation__list_user_desktop {
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.navigation__list_user_mobile {
+    width: 68%;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 28px;
+}
+
+.navigation__item {
+
+}
+
+.navigation__item:last-child {
+    margin-left: auto;
+}
+
+.navigation__item_mobile:first-child {
+    margin-top: 159px;
+}
+
+.navigation__item_mobile:last-child {
+    margin-top: auto;
+    margin-bottom: 90px;
+}
+
+.navigation__link {
+    text-decoration: none;
+    color: black;
+    font-family: Inter;
+    font-style: normal;
+    transition: opacity 0.4s ease;
+}
+
+.navigation__link:hover {
+    opacity: 0.7;
+}
+
+.navigation__link_guest {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.navigation__link_logged {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.navigation__link_mobile {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.navigation__link_active_desktop {
+    font-weight: 500;
+}
+
+.navigation__link_active_mobile {
+    border-bottom: 2px solid black;
+}
+
+/* @media screen and (max-width: 768px) {
+    .navigation__list{
+    }
+} */
+
+@media screen and (max-width: 370px) {
+    .navigation__list_user_mobile {
+        width: 100%;
+    }
+
+    .navigation__link_mobile {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .navigation__list{
+        gap: 14px;
+    }
+
+    .navigation__link_guest {
+        font-size: 10px;
+    }
+}

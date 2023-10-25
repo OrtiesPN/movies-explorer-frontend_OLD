@@ -1,9 +1,69 @@
 import './App.css';
-import Header from '..Header/Header.js'
+import { useState, useEffect, useCallback } from "react";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
+import Header from '../Header/Header'
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(true);
+
+  const [isBurgerClicked, setIsBurgerClicked] = useState(false);
+
+  function handleBurgerMenuClick () {
+    setIsBurgerClicked(!isBurgerClicked)
+  }
+
   return (
-    <Header />
+    <div className="app">
+      <div className="app__container">
+        <Routes>
+          <Route 
+            path="/"
+            element={
+            <Header 
+              isLoggedIn={loggedIn}
+              isBurgerClicked={isBurgerClicked}
+              onClickBurger={handleBurgerMenuClick}
+            />
+          }/>
+          {/* <Route path="/signup" element={}/> */}
+          {/* <Route path="/signin" element={}/> */}
+          <Route
+            path="/movies" 
+            element={
+              <Header 
+                isLoggedIn={loggedIn}
+                isBurgerClicked={isBurgerClicked}
+                onClickBurger={handleBurgerMenuClick}
+              />
+            }/>
+          <Route
+            path="/saved-movies" 
+            element={
+              <Header 
+                isLoggedIn={loggedIn}
+                isBurgerClicked={isBurgerClicked}
+                onClickBurger={handleBurgerMenuClick}
+              />
+            }/>
+          <Route
+            path="/profile" 
+            element={
+              <Header 
+                isLoggedIn={loggedIn}
+                isBurgerClicked={isBurgerClicked}
+                onClickBurger={handleBurgerMenuClick}
+              />
+            }/>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

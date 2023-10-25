@@ -1,46 +1,95 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import "./Navigation.css";
 import Button from "../Button/Button";
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { useState } from 'react';
 
-export default function Navigation(isLoggedIn) {
+export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,}) {
     const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
+    const activeLink = `navigation__link_active_${isBurgerClicked ? "mobile" : "desktop"}`;
 
-    const navigationGuest = function() {
-        return (
-            <nav className="navigation">
-                <ul className="navigation__list">
-                    <li><Link to="/signup" className="navigation__link">Регистрация</Link></li>
-                    <li>
-                        <Link to="/signin" >
-                            <Button type="signinHeader"/>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        )
-    };
-
-    const navigationUser = function() {
-        return (
-            <nav className="navigation">
-                <ul className="navigation__list navigation__list_user">
-                    <li><Link to="/movies" className="navigation__link">Фильмы</Link></li>
-                    <li><Link to="/saved-movies" className="navigation__link">Сохраненные фильмы</Link></li>
-                    <li>
-                        <Link to="/profile" >
-                            {isMobile ? <BurgerMenu /> : <Button type="accountHeader" /> }
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        )
-    }
+    
 
     return(
         <>
-            {!isLoggedIn ? navigationGuest : navigationUser}
+            {!isLoggedIn ? 
+            (
+                <nav className="navigation">
+                    <ul className="navigation__list">
+                        <li><Link to="/signup" className="navigation__link navigation__link_guest">Регистрация</Link></li>
+                        <li>
+                            <Link to="/signin" className="navigation__link navigation__link_guest">
+                                <Button type="signinHeader"/>
+                            </Link>
+                        </li>
+                    </ul>
+            </nav>
+            ) : isMobile ? (
+                <>
+                    <Button type="burger" isBurgerClicked={isBurgerClicked} onClickBurger={onClickBurger}/>
+                    <nav className={`navigation navigation_type_mobile navigation_type_mobile${isBurgerClicked? "_visible" : "" }`} onClick={onClickBurger}>
+                        <ul className="navigation__list navigation__list_user_mobile" onClick={(evt=> evt.stopPropagation())}>
+                        <li className="navigation__item_mobile">
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) => isActive ? `navigation__link navigation__link_mobile ${activeLink}` : "navigation__link navigation__link_mobile"}
+                                    onClick={onClickBurger}
+                                    >
+                                    Главная
+                                </NavLink>
+                            </li>
+                            <li className="navigation__item_mobile">
+                                <NavLink
+                                    to="/movies"
+                                    className={({ isActive }) => isActive ? `navigation__link navigation__link_mobile ${activeLink}` : "navigation__link navigation__link_mobile"}
+                                    onClick={onClickBurger}
+                                    >
+                                    Фильмы
+                                </NavLink>
+                            </li>
+                            <li className="navigation__item_mobile">
+                                <NavLink
+                                to="/saved-movies"
+                                className={({ isActive }) => isActive ? `navigation__link navigation__link_mobile ${activeLink}` : "navigation__link navigation__link_mobile"}
+                                onClick={onClickBurger}
+                                >
+                                    Сохраненные фильмы
+                                </NavLink>
+                            </li>
+                            <li className="navigation__item_mobile">
+                                <NavLink
+                                to="/profile"
+                                className="navigation__link"
+                                onClick={onClickBurger}
+                                >
+                                    <Button type="accountHeader" /> 
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                </>
+                ) : (
+                    <nav className="navigation">
+                        <ul className="navigation__list navigation__list_user_desktop">
+                            <li className="navigation__item">
+                                <NavLink to="/movies" className={({ isActive }) => isActive ? `navigation__link navigation__link_logged ${activeLink}` : "navigation__link navigation__link_logged"}>
+                                    Фильмы
+                                </NavLink>
+                            </li>
+                            <li className="navigation__item">
+                                <NavLink to="/saved-movies" className={({ isActive }) => isActive ? `navigation__link navigation__link_logged ${activeLink}` : "navigation__link navigation__link_logged"}>
+                                    Сохраненные фильмы
+                                </NavLink>
+                            </li>
+                            <li className="navigation__item">
+                                <NavLink to="/profile" className="navigation__link" >
+                                    <Button type="accountHeader" /> 
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                )
+            }
         </>
     )
 }
