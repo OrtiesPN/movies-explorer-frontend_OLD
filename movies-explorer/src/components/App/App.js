@@ -6,7 +6,11 @@ import {
   useNavigate,
   Navigate,
 } from "react-router-dom";
-import Header from '../Header/Header'
+import Header from '../Header/Header';
+import Promo from '../Promo/Promo';
+import NavTab from '../NavTab/NavTab';
+import AboutProject from '../AboutProject/AboutProject';
+import Techs from '../Techs/Techs';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -25,11 +29,17 @@ function App() {
           <Route 
             path="/"
             element={
-            <Header 
-              isLoggedIn={loggedIn}
-              isBurgerClicked={isBurgerClicked}
-              onClickBurger={handleBurgerMenuClick}
-            />
+              <>
+                <Header 
+                  isLoggedIn={loggedIn}
+                  isBurgerClicked={isBurgerClicked}
+                  onClickBurger={handleBurgerMenuClick}
+                />
+                <Promo />
+                <NavTab />
+                <AboutProject />
+                <Techs />
+              </>
           }/>
           {/* <Route path="/signup" element={}/> */}
           {/* <Route path="/signin" element={}/> */}

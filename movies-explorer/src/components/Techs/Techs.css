@@ -1,0 +1,131 @@
+.techs {
+    background: #F5F5F5;
+    padding: 100px 70px;
+}
+
+/* .techs__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.techs__title {
+    margin: 0;
+    padding-bottom: 23px;
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    border-bottom: 1px solid #000;
+}
+
+.techs__motto {
+    margin: 90px auto 0;
+    color: #000;
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -2px;
+}
+
+.techs__caption {
+    margin: 26px auto 0;
+    max-width: 460px;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.56px;
+}
+
+.techs__technologies {
+    margin: 100px auto 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.techs__item {
+    width: 90px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #E8E8E8;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.56px;
+}
+
+@media screen and (max-width: 768px){
+    .techs {
+        padding: 90px 50px;
+    }
+
+    .techs__motto {
+        margin-top: 80px;
+
+    }
+
+    .techs__caption {
+        margin-top: 22px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.48px;
+    }
+
+    .techs__technologies {
+        margin-top: 83px;
+        padding: 0 10px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .techs__item {
+        width: 84px;
+        height: 57px;
+        font-size: 12px;
+        line-height: 57px;
+        letter-spacing: -0.48px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .techs {
+        padding: 70px 18px;
+    }
+
+    .techs__title {
+        font-size: 18px;
+        letter-spacing: -0.72px;
+        padding-bottom: 28px;
+    }
+
+    .techs__motto {
+        margin-top: 60px;
+        font-size: 30px;
+        letter-spacing: -1.2px;
+
+    }
+
+    .techs__caption {
+        margin-top: 24px;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: -0.44px;
+    }
+
+    .techs__technologies {
+        margin-top: 50px;
+        padding: 0 53px 0;
+    }
+}

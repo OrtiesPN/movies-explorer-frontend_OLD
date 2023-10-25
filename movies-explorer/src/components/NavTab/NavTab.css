@@ -1,0 +1,36 @@
+.navtab {
+    height: 66px;
+    background: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navtab__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.navtab__anchorlink {
+    color: black;
+    cursor: pointer;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 123.077% */
+    text-decoration-line: underline;
+    transition: opacity .4s ease;
+}
+
+.navtab__anchorlink:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 320px) {
+    .navtab__anchorlink {
+        font-size: 11px;
+    }
+}
