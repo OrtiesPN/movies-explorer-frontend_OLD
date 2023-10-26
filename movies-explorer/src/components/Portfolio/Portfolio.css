@@ -1,0 +1,224 @@
+.portfolio {
+    padding: 110px 70px 125px;
+}
+
+.portfolio__title {
+    margin: 0;
+    padding-bottom: 23px;
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    border-bottom: 1px solid #000;
+}
+
+.portfolio__article {
+    margin-top: 66px;
+    display: flex;
+    justify-content: space-between;
+    gap: 49px;
+}
+
+.portfolio__textblock {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio__name {
+    margin: 0;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -1.6px;
+}
+
+.portfolio__summary {
+    margin: 16px 0 0 0;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.portfolio__about {
+    margin: 26px 0 0 0;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.portfolio__link {
+    color: #000;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity .4s ease;
+}
+
+.portfolio__link:hover {
+    opacity: .7;
+}
+
+.portfolio__link_git {
+    margin-top: auto;
+    padding-top: 10px;
+    vertical-align: bottom;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.portfolio__link_project {
+    display: flex;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -1.2px;
+}
+
+.portfolio__link_project::after {
+    margin-left: auto;
+    content: "↗";
+    line-height: 60px;
+}
+
+.portfolio__photo {
+    width: 270px;
+    height: 327px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.portfolio__projects {
+    margin: 100px 0 0 0;
+    color: #A0A0A0;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.portfolio__links {
+    margin: 50px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.portfolio__item {
+    width: 100%;
+    padding-bottom: 19px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+@media screen and (max-width: 768px){
+    .portfolio {
+        padding: 90px 50px;
+    }
+
+    .portfolio__textblock {
+        max-width: 364px;
+    }
+
+    .portfolio__about {
+        margin-top: 20px;
+    }
+
+    .portfolio__photo {
+        width: 255px;
+        height: 307px;
+    }
+
+    .portfolio__projects {
+        margin-top: 90px;
+    }
+
+    .portfolio__link_project {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 520px){
+    
+
+    .portfolio__article {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .portfolio__photo {
+        align-self: center;
+        width: 292px;
+        height: 352px;
+    }
+
+    .portfolio__link_git {
+        margin-top: 40px;
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 440px){
+    .portfolio {
+        padding: 70px 14px;
+    }
+
+    .portfolio__title {
+        margin-top: 28px;
+        font-size: 18px;
+        letter-spacing: -0.72px;
+    }
+
+    .portfolio__article {
+        margin-top: 60px;
+    }
+
+    .portfolio__name {
+        font-size: 30px;
+        letter-spacing: -1.2px;
+    }
+
+    .portfolio__summary {
+        margin-top: 20px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .portfolio__about {
+        margin-top: 20px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .portfolio__projects {
+        margin-top: 70px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .portfolio__links {
+        margin-top: 40px;
+    }
+
+    .portfolio__link_project {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.72px;
+    }
+    
+    .portfolio__link_project::after {
+        line-height: 28px;
+    }
+}
+

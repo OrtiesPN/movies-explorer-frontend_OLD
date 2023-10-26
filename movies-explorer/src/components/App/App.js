@@ -11,6 +11,7 @@ import Promo from '../Promo/Promo';
 import NavTab from '../NavTab/NavTab';
 import AboutProject from '../AboutProject/AboutProject';
 import Techs from '../Techs/Techs';
+import Portfolio from '../Portfolio/Portfolio';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -39,6 +40,7 @@ function App() {
                 <NavTab />
                 <AboutProject />
                 <Techs />
+                <Portfolio />
               </>
           }/>
           {/* <Route path="/signup" element={}/> */}
