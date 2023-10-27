@@ -4,7 +4,7 @@ export default function AboutProject() {
     return (
         <section className="project">
             <div className="project__wrapper">
-                <h2 className="project__about-title">О проекте</h2>
+                <h2 className="project__about-title" id="about">О проекте</h2>
                 <ul className="project__specs">
                     <li className="project__spec">
                         <h3 className="project__spec-title">Дипломный проект включал 5 этапов</h3>
