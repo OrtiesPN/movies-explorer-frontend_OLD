@@ -2,15 +2,9 @@
     padding: 110px 70px;
 }
 
-/* .project__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 .project__about-title {
     margin: 0;
-    padding-bottom: 23px;
+    padding-bottom: 24px;
     color: #000;
     font-size: 22px;
     font-style: normal;
@@ -43,7 +37,7 @@
     letter-spacing: -0.8px;
 }
 
-.project__spec_about {
+.project__spec-about {
     margin: 26px 0 0 0;
     font-size: 14px;
     font-style: normal;
@@ -128,7 +122,7 @@
 
 @media screen and (max-width: 440px) {
     .project {
-        padding: 70px 18px;
+        padding: 71px 18px 70px;
     }
 
     .project__about-title {
@@ -149,6 +143,7 @@
 
     .project__spec-title {
         font-size: 18px;
+        line-height: 22px;
         letter-spacing: -0.72px;
     }
 
@@ -156,6 +151,15 @@
         margin-top: 16px;
         font-size: 11px;
         line-height: 16px;
+    }
+
+    .project__timebar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        grid-template-rows: 36px 24px;
+        grid-template-areas:
+        "week1 week1 week4 week4 week4"
+        "backend backend frontend frontend frontend";
     }
 
     .project_timecell_week1 {

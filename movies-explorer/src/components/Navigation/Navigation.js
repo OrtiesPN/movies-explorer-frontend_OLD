@@ -16,8 +16,12 @@ export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,
             (
                 <nav className="navigation">
                     <ul className="navigation__list">
-                        <li><Link to="/signup" className="navigation__link navigation__link_guest">Регистрация</Link></li>
-                        <li>
+                        <li className="navigation__item">
+                            <Link to="/signup" className="navigation__link navigation__link_guest">
+                                Регистрация
+                            </Link>
+                        </li>
+                        <li className="navigation__item">
                             <Link to="/signin" className="navigation__link navigation__link_guest">
                                 <Button type="signinHeader"/>
                             </Link>
@@ -71,17 +75,17 @@ export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,
                 ) : (
                     <nav className="navigation">
                         <ul className="navigation__list navigation__list_user_desktop">
-                            <li className="navigation__item">
+                            <li className="navigation__item navigation__item_logged">
                                 <NavLink to="/movies" className={({ isActive }) => isActive ? `navigation__link navigation__link_logged ${activeLink}` : "navigation__link navigation__link_logged"}>
                                     Фильмы
                                 </NavLink>
                             </li>
-                            <li className="navigation__item">
+                            <li className="navigation__item navigation__item_logged">
                                 <NavLink to="/saved-movies" className={({ isActive }) => isActive ? `navigation__link navigation__link_logged ${activeLink}` : "navigation__link navigation__link_logged"}>
                                     Сохраненные фильмы
                                 </NavLink>
                             </li>
-                            <li className="navigation__item">
+                            <li className="navigation__item navigation__item_logged">
                                 <NavLink to="/profile" className="navigation__link" >
                                     <Button type="accountHeader" /> 
                                 </NavLink>

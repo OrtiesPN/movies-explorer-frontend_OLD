@@ -1,10 +1,10 @@
 .portfolio {
-    padding: 110px 70px 125px;
+    padding: 110px 70px 115px;
 }
 
 .portfolio__title {
     margin: 0;
-    padding-bottom: 23px;
+    padding-bottom: 24px;
     color: #000;
     font-size: 22px;
     font-style: normal;
@@ -29,29 +29,29 @@
 
 .portfolio__name {
     margin: 0;
-    font-size: 40px;
+    font-size: 50px;
     font-style: normal;
     font-weight: 400;
-    line-height: 40px;
-    letter-spacing: -1.6px;
+    line-height: 58px;
+    letter-spacing: -2px;
 }
 
 .portfolio__summary {
-    margin: 16px 0 0 0;
+    margin: 18px 0 0 0;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-size: 12px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 18px;
+    line-height: 20px;
 }
 
 .portfolio__about {
     margin: 26px 0 0 0;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 22px;
 }
 
 .portfolio__link {
@@ -67,7 +67,7 @@
 
 .portfolio__link_git {
     margin-top: auto;
-    padding-top: 10px;
+    padding-top: 10px;      /*отступ при переполнении текстового блока */
     vertical-align: bottom;
     font-size: 14px;
     font-weight: 500;
@@ -97,7 +97,7 @@
 }
 
 .portfolio__projects {
-    margin: 100px 0 0 0;
+    margin: 101px 0 0 0;
     color: #A0A0A0;
     font-feature-settings: 'clig' off, 'liga' off;
     font-size: 18px;
@@ -117,21 +117,42 @@
 
 .portfolio__item {
     width: 100%;
-    padding-bottom: 19px;
+    padding-bottom: 9px;
     border-bottom: 1px solid #E8E8E8;
+}
+
+.portfolio__item:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 @media screen and (max-width: 768px){
     .portfolio {
-        padding: 90px 50px;
+        padding: 90px 50px 80px;
     }
 
     .portfolio__textblock {
         max-width: 364px;
     }
 
+    .portfolio__name {
+        font-size: 40px;
+        line-height: 40px; /* 100% */
+        letter-spacing: -1.6px;
+    }
+
+    .portfolio__summary {
+        margin-top: 16px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
     .portfolio__about {
         margin-top: 20px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
     }
 
     .portfolio__photo {
@@ -175,9 +196,9 @@
     }
 
     .portfolio__title {
-        margin-top: 28px;
         font-size: 18px;
         letter-spacing: -0.72px;
+        padding-bottom: 28px;
     }
 
     .portfolio__article {
@@ -186,6 +207,7 @@
 
     .portfolio__name {
         font-size: 30px;
+        line-height: normal;
         letter-spacing: -1.2px;
     }
 
@@ -209,6 +231,10 @@
 
     .portfolio__links {
         margin-top: 40px;
+    }
+
+    .portfolio__item {
+        padding-bottom: 19px;
     }
 
     .portfolio__link_project {

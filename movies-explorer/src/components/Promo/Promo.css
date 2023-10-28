@@ -3,14 +3,14 @@
     background: #DDDEE3;
     background-image: url(../../images/pic__COLOR_landing-logo.svg);
     background-size: 320px 320px;
-    background-position: center;
+    background-position: 50% 82px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .promo__title {
+    margin: 184px 0 0;
     max-width: 730px;
     color: #000;
     text-align: center;
@@ -24,6 +24,11 @@
 @media screen and (max-width: 768px) {
     .promo {
         height: 784px;
+        background-position: 50% 224px;
+    }
+
+    .promo__title {
+        margin-top: 326px;
     }
 }
 
@@ -31,8 +36,10 @@
     .promo {
         height: 570px;
         background-size: 248px 248px;
+        background-position: 50% 142px;
     }
     .promo__title{
+        margin-top: 207px;
         font-size: 31px;
         line-height: 39px;
         letter-spacing: -1.24px;

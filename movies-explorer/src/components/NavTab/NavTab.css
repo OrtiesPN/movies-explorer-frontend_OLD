@@ -1,5 +1,6 @@
 .navtab {
-    height: 66px;
+    padding: 24px 0 24px 0;
+    max-height: 66px;
     background: #F5F5F5;
     display: flex;
     justify-content: center;
@@ -20,7 +21,7 @@
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
-    line-height: 16px; /* 123.077% */
+    line-height: 16px;
     text-decoration-line: underline;
     transition: opacity .4s ease;
 }
@@ -30,6 +31,18 @@
 }
 
 @media screen and (max-width: 320px) {
+    .navtab {
+        padding: 25px 0 25px 0;
+    }
+
+    .navtab__list {
+        gap: 24px;
+    }
+
+    .navtab__item {
+        line-height: 0;
+    }
+
     .navtab__anchorlink {
         font-size: 11px;
     }

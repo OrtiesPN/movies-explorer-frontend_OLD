@@ -49,10 +49,10 @@
 }
 
 .navigation__item {
-
+    line-height: 0;
 }
 
-.navigation__item:last-child {
+.navigation__item_logged:last-child {
     margin-left: auto;
 }
 

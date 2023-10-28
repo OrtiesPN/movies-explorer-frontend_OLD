@@ -16,7 +16,7 @@ import Footer from '../Footer/Footer';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
 
