@@ -40,7 +40,8 @@
     margin: 100px auto 0;
     padding: 0;
     list-style: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 90px);
     gap: 10px;
     justify-content: center;
 }
@@ -78,9 +79,7 @@
 
     .techs__technologies {
         margin-top: 83px;
-        padding: 0 10px;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        grid-template-columns: repeat(auto-fit, 84px);
     }
 
     .techs__item {
@@ -94,7 +93,7 @@
 
 @media screen and (max-width: 440px) {
     .techs {
-        padding: 70px 18px;
+        padding: 69px 18px 70px;
     }
 
     .techs__title {
@@ -120,6 +119,6 @@
 
     .techs__technologies {
         margin-top: 50px;
-        padding: 0 53px 0;
+        grid-template-columns: repeat(2, 84px);
     }
 }

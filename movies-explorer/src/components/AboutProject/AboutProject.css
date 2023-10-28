@@ -154,12 +154,8 @@
     }
 
     .project__timebar {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr); 
+        grid-template-columns: 100px 4fr ; 
         grid-template-rows: 36px 24px;
-        grid-template-areas:
-        "week1 week1 week4 week4 week4"
-        "backend backend frontend frontend frontend";
     }
 
     .project_timecell_week1 {
