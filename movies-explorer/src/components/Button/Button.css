@@ -20,6 +20,31 @@
     opacity: 0.8;
 }
 
+.button_type_edit {
+    width: fit-content;
+    color: #000;
+    background: none;
+    border-radius: 0;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button_type_signout {
+    margin-bottom: 70px;
+    width: fit-content;
+    color: #EE3465;
+    background: none;
+    border-radius: 0;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 .button_type_header-signin{
     width: 76px;
     height: 32px;
@@ -46,6 +71,7 @@
 .button_type_burger {
     width: 44px;
     height: 44px;
+    padding: 3px 8px;
     background: none;
     display: flex;
     flex-direction: column;
@@ -55,7 +81,7 @@
 }
 
 .button__bar_burger {
-    width: 28px;
+    width: 100%;
     height: 3px;
     flex-shrink: 0;
     background-color: #000;
@@ -78,7 +104,7 @@
 
 .button__bar_burger_clicked:nth-child(1) {
     rotate: 45deg;
-    translate: 0 .75em;
+    translate: 0 .68em;
     transition: ease .4s;
 }
 
@@ -89,7 +115,7 @@
 
 .button__bar_burger_clicked:nth-child(3) {
     rotate: -45deg;
-    translate: 0 -.75em;
+    translate: 0 -.68em;
     transition: ease .4s;
 }
 
@@ -105,5 +131,30 @@
         width: 54px;
         height: 26px;
         font-size: 10px;
+    }
+
+    .button_type_edit{
+        font-size: 12px;
+    }
+
+    .button_type_signout{
+        font-size: 12px;
+    }
+
+    .button_type_burger {
+        position: fixed;
+        top: 7px;
+        right: 9px;
+        width: 40px;
+        height: 43px;
+        padding: 5px 9px;
+    }
+
+    .button__bar_burger_clicked:nth-child(1) {
+        translate: 0 .57em;
+    }
+    
+    .button__bar_burger_clicked:nth-child(3) {
+        translate: 0 -.57em;
     }
 }

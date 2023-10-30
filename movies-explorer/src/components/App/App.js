@@ -13,10 +13,12 @@ import AboutProject from '../AboutProject/AboutProject';
 import Techs from '../Techs/Techs';
 import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
+import NotFound from '../NotFound/NotFound';
+import Profile from '../Profile/Profile';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({});
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({name: "Никита", email: "example@email.com"});
+  const [loggedIn, setLoggedIn] = useState(true);
 
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
 
@@ -68,13 +70,23 @@ function App() {
           <Route
             path="/profile" 
             element={
+              <>
               <Header 
                 isLoggedIn={loggedIn}
                 isBurgerClicked={isBurgerClicked}
                 onClickBurger={handleBurgerMenuClick}
               />
+              <Profile
+                isLoggedIn={loggedIn}
+                user={currentUser}
+              />
+              </>
             }/>
-          <Route path="*" element={<Navigate to="/" replace />} />
+            <Route
+            path="/404" 
+            element={<NotFound />}
+            />
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </div>
     </div>

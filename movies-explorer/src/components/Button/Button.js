@@ -1,7 +1,7 @@
 import "./Button.css";
 import userLogo from "../../images/icon__COLOR_icon-main.svg"
 
-export default function Button ({type, isBurgerClicked, onClickBurger}) {
+export default function Button ({type, isBurgerClicked, onClickBurger, titleButton, isValid}) {
     return {
         signinHeader: (
             <button
@@ -32,6 +32,35 @@ export default function Button ({type, isBurgerClicked, onClickBurger}) {
                 <div className={`button__bar_burger ${isBurgerClicked ? "button__bar_burger_clicked" : ""}`}></div>
                 <div className={`button__bar_burger ${isBurgerClicked ? "button__bar_burger_clicked" : ""}`}></div>
                 <div className={`button__bar_burger ${isBurgerClicked ? "button__bar_burger_clicked" : ""}`}></div>
+            </button>
+        ),
+        logreg: (
+            <button
+                className={`button button_type_login-register ${
+                    !isValid && "button_type_login-register_disabled"}
+                  `}
+                type="submit"
+                aria-labelledby={titleButton}
+            >
+                {titleButton}
+            </button>
+        ),
+        editUser: (
+            <button
+                className="button button_type_edit"
+                type="submit"
+                aria-labelledby={titleButton}
+            >
+                {titleButton}
+            </button>
+        ),
+        signout: (
+            <button
+                className="button button_type_signout"
+                type="button"
+                aria-labelledby={titleButton}
+            >
+                {titleButton}
             </button>
         )
     }[type];

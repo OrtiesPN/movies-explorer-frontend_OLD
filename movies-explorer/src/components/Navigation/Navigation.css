@@ -90,7 +90,7 @@
 }
 
 .navigation__link_mobile {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     line-height: normal;
 }
@@ -112,10 +112,6 @@
     .navigation__list_user_mobile {
         width: 100%;
     }
-
-    .navigation__link_mobile {
-        font-size: 18px;
-    }
 }
 
 @media screen and (max-width: 320px) {
@@ -125,5 +121,17 @@
 
     .navigation__link_guest {
         font-size: 10px;
+    }
+
+    .navigation__item_mobile:first-child {
+        margin-top: 145px;
+    }
+
+    .navigation__item_mobile:last-child {
+        margin-top: 419px;
+    }
+
+    .navigation__list_user_mobile {
+        gap: 25px;
     }
 }

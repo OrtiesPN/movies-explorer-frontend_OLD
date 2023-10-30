@@ -1,0 +1,55 @@
+.input {
+    text-align: end;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.input__label_edit-user {
+    margin-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #000;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+}
+
+.input__label_edit-user:first-of-type {
+    margin-top: 123px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.input__label_edit-user:last-of-type {
+    margin-bottom: 220px;
+}
+
+.input__type_edit-user {
+
+}
+
+@media screen and (max-width: 768px) {
+   .input__label_edit-user:first-of-type {
+        margin-top: 96px;
+    }
+
+    .input__label_edit-user:last-of-type {
+        margin-bottom: 210px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .input__label_edit-user:first-of-type {
+         margin-top: 80px;
+     }
+ 
+     .input__label_edit-user:last-of-type {
+         margin-bottom: 379px;
+     }
+ }
