@@ -15,8 +15,14 @@ import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 import NotFound from '../NotFound/NotFound';
 import Profile from '../Profile/Profile';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 
 function App() {
+  const navigate = useNavigate();
+
+  // demo dev functions
+
   const [currentUser, setCurrentUser] = useState({name: "Никита", email: "example@email.com"});
   const [loggedIn, setLoggedIn] = useState(true);
 
@@ -25,6 +31,13 @@ function App() {
   function handleBurgerMenuClick () {
     setIsBurgerClicked(!isBurgerClicked)
   }
+
+  function handleExit() {
+    setLoggedIn(false);
+    navigate("/");
+  }
+
+  // return markup
 
   return (
     <div className="app">
@@ -47,8 +60,8 @@ function App() {
                 <Footer />
               </>
           }/>
-          {/* <Route path="/signup" element={}/> */}
-          {/* <Route path="/signin" element={}/> */}
+          <Route path="/signup" element={<Register/>}/>
+          <Route path="/signin" element={<Login/>}/>
           <Route
             path="/movies" 
             element={
@@ -79,6 +92,7 @@ function App() {
               <Profile
                 isLoggedIn={loggedIn}
                 user={currentUser}
+                onSignout={handleExit}
               />
               </>
             }/>

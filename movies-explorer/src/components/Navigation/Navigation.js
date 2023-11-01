@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import "./Navigation.css";
 import Button from "../Button/Button";
+import Burger from '../Burger/Burger';
 import { useState } from 'react';
 
 export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,}) {
@@ -30,7 +31,7 @@ export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,
             </nav>
             ) : isMobile ? (
                 <>
-                    <Button type="burger" isBurgerClicked={isBurgerClicked} onClickBurger={onClickBurger}/>
+                    <Burger isBurgerClicked={isBurgerClicked} onClickBurger={onClickBurger}/>
                     <nav className={`navigation navigation_type_mobile navigation_type_mobile${isBurgerClicked? "_visible" : "" }`} onClick={onClickBurger}>
                         <ul className="navigation__list navigation__list_user_mobile" onClick={(evt=> evt.stopPropagation())}>
                         <li className="navigation__item_mobile">
@@ -97,3 +98,5 @@ export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,
         </>
     )
 }
+
+// <Button type="burger" isBurgerClicked={isBurgerClicked} onClickBurger={onClickBurger}/>

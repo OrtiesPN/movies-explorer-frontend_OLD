@@ -1,7 +1,7 @@
 import "./Button.css";
 import userLogo from "../../images/icon__COLOR_icon-main.svg"
 
-export default function Button ({type, isBurgerClicked, onClickBurger, titleButton, isValid}) {
+export default function Button ({type, isBurgerClicked, onClickBurger, titleButton, isValid, onClick}) {
     return {
         signinHeader: (
             <button
@@ -36,20 +36,21 @@ export default function Button ({type, isBurgerClicked, onClickBurger, titleButt
         ),
         logreg: (
             <button
-                className={`button button_type_login-register ${
-                    !isValid && "button_type_login-register_disabled"}
-                  `}
+                className="button button_type_logreg"
                 type="submit"
+                disabled={!isValid && true}
                 aria-labelledby={titleButton}
+                onClick={onClick}
             >
                 {titleButton}
             </button>
         ),
-        editUser: (
+        profile: (
             <button
-                className="button button_type_edit"
-                type="submit"
+                className="button button_type_profile"
+                type="button"
                 aria-labelledby={titleButton}
+                onClick={onClick}
             >
                 {titleButton}
             </button>

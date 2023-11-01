@@ -11,8 +11,8 @@ export default function Form({
   children,
 }) {
   return (
-    <form className={`form form__${type}`} id={`${name}-form`} onSubmit={onSubmit}>
-        <h2 className="form__title">{title}</h2>
+    <form className={`form form_type_${type}`} id={`${name}-form`} onSubmit={onSubmit}>
+        <h2 className={`form__title form__title_${type}`}>{title}</h2>
         {children}
         <Button type={type} titleButton={titleButton} isValid={isValid} />
       </form>

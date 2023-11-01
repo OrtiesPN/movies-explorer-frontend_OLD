@@ -1,0 +1,75 @@
+.register {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register__home {
+    align-self: flex-start;
+    text-decoration: none;
+    line-height: 0;
+    transition: opacity .4s ease;
+}
+
+.register__home:hover {
+    opacity: .7;
+}
+
+.register__logo {
+    width: 38px;
+    height: 38px;
+    box-sizing: border-box;
+    object-fit: contain;
+    object-position: center;
+}
+
+.register__caption {
+    margin: 0;
+    color: #A0A0A0;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register__signin {
+    text-decoration: none;
+    color: #3456F3;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: opacity .4s ease;
+}
+
+.register__signin:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 440px) {
+    .register {
+        justify-content: start;
+    }
+    .register__home {
+        margin-top: 56px;
+        align-self: center;
+    }
+
+    .register__caption {
+        font-size: 12px;
+    }
+
+    .register__signin {
+        font-size: 12px;
+    }
+}

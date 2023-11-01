@@ -1,35 +1,45 @@
 import './Input.css';
 
-export default function Input ({type, inputLabel, values}) {
+export default function Input ({type, inputLabel, values, isInputValid, onEdit}) {
     return {
         logreg: (
-            <label>
-                <input>
-                </input>
-                <span>
-                    Ошибка
-                </span>
-            </label>
-        ),
-        editUser: (
-            <label className='input__label_edit-user'>
-                {inputLabel}
-                <input 
-                    className='input inpunt_type_edit-user'
-                    name={inputLabel === "Имя" ? "user_name" : inputLabel === "E-mail" ? "user-email" : "user-password" }
-                    type={inputLabel === "Имя" ? "text" : inputLabel === "E-mail" ? "email" : "password" }
-                    placeholder={inputLabel === "Имя" ? "Имя" : inputLabel === "E-mail" ? "E-mail" : "Пароль" }
+            <label className='input__label_logreg'>
+                {inputLabel === "name" ? "Имя" : inputLabel === "email" ? "E-mail" : "Пароль" }
+                <input
+                    className={`input input_type_logreg ${
+                        isInputValid === undefined || isInputValid
+                          ? ""
+                          : "input_error"
+                      }`}
+                    name={`user_${inputLabel}`}
+                    type={inputLabel === "name" ? "text" : inputLabel}
                     required
                     value={values}
                     readOnly
                 >
                 </input>
+                <span className={`input__error ${
+                        isInputValid === undefined || isInputValid
+                          ? ""
+                          : "input__error_active"
+                      }`}>
+                    Что-то пошло не так...
+                </span>
             </label>
         ),
-        search: (
-            <label>
-                <input>
+        edit: (
+            <label className='input__label_profile'>
+                {inputLabel === "name" ? "Имя" : "E-mail"}
+                <input 
+                    className='input input_type_profile'
+                    name={`edit_${inputLabel}`}
+                    type={inputLabel === "name" ? "text" : inputLabel}
+                    required
+                    value={values}
+                    disabled={!onEdit}
+                >
                 </input>
             </label>
-        ),}[type] 
+        ),
+    }[type] 
 }

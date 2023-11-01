@@ -1,14 +1,69 @@
 .input {
-    text-align: end;
     padding: 0;
     border: none;
     background-color: inherit;
+}
+
+.input_error {
+    color: #EE3465;
+}
+
+/* Стили инпутов на страницах логина и регистрации */
+
+.input_type_logreg {
+    padding-bottom: 10px;
+    text-align: start;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.input_type_logreg:focus {
+    outline: 0;
+    border-bottom: 1px solid #3456F3;
+}
+
+.input__label_logreg {
+    margin-bottom: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    color: #A0A0A0;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input__label_logreg:first-of-type {
+    margin-top: 40px;
+}
+
+/* Стили инпутов на странице редактирования профиля */
+
+.input_type_profile {
+    color: #000;
+    font-size: 11px;
+    font-style: normal;
+    text-align: end;
     font-weight: 400;
     line-height: 14px;
 }
 
-.input__label_edit-user {
-    margin-top: 17px;
+.input_type_profile:disabled {
+    color: #000;
+}
+
+.input_type_profile:focus {
+    outline: 0;
+}
+
+.input__label_profile {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -20,36 +75,26 @@
     
 }
 
-.input__label_edit-user:first-of-type {
-    margin-top: 123px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #E8E8E8;
+/* Стили для ошибок */
+
+.input__error {
+    display: none;
+    
 }
 
-.input__label_edit-user:last-of-type {
-    margin-bottom: 220px;
+.input__error_active {
+    position: absolute;
+    top: 50px;
+    display: block;
+    color: #EE3465;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.input__type_edit-user {
-
-}
-
-@media screen and (max-width: 768px) {
-   .input__label_edit-user:first-of-type {
-        margin-top: 96px;
+@media screen and (max-width: 440px) {
+    .input__label_logreg:first-of-type {
+        margin-top: 80px;
     }
-
-    .input__label_edit-user:last-of-type {
-        margin-bottom: 210px;
-    }
 }
-
-@media screen and (max-width: 320px) {
-    .input__label_edit-user:first-of-type {
-         margin-top: 80px;
-     }
- 
-     .input__label_edit-user:last-of-type {
-         margin-bottom: 379px;
-     }
- }

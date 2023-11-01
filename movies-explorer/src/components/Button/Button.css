@@ -1,26 +1,41 @@
 .button {
     margin: 0;
     padding: 0;
-    border-radius: 3px;
-    background: #3456F3;
     border: none;
-    color: #FFF;
     font-family: Inter;
     font-style: normal;
+    text-align: center;
     cursor: pointer;
     transition: opacity 0.4s ease;
     flex-shrink: 0;
-
-    /* font-size: 12px;
-    font-weight: 500;
-    line-height: 16px; */
 }
 
 .button:hover {
     opacity: 0.8;
 }
 
-.button_type_edit {
+.button_type_logreg {
+    margin-top: auto;
+    width: 100%;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    background: #3456F3;
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.button_type_logreg:disabled {
+    pointer-events: none;
+    color: #C2C2C2;
+    background: #F8F8F8;
+}
+
+
+.button_type_profile {
     width: fit-content;
     color: #000;
     background: none;
@@ -29,7 +44,7 @@
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 16px;
 }
 
 .button_type_signout {
@@ -48,6 +63,9 @@
 .button_type_header-signin{
     width: 76px;
     height: 32px;
+    border-radius: 3px;
+    background: #3456F3;
+    color: #FFF;
     font-size: 12px;
     font-weight: 500;
     line-height: 16px;
@@ -126,6 +144,15 @@
     flex-shrink: 0;
 }
 
+
+
+@media screen and (max-width: 440px) {
+    .button_type_logreg {
+        /* margin-top: 30vh; */
+        font-size: 12px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .button_type_header-signin{
         width: 54px;
@@ -133,7 +160,7 @@
         font-size: 10px;
     }
 
-    .button_type_edit{
+    .button_type_profile{
         font-size: 12px;
     }
 
@@ -142,9 +169,6 @@
     }
 
     .button_type_burger {
-        position: fixed;
-        top: 7px;
-        right: 9px;
         width: 40px;
         height: 43px;
         padding: 5px 9px;

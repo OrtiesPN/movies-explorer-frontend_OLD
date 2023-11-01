@@ -1,28 +1,55 @@
 import { Link } from "react-router-dom";
 import "./Profile.css";
-import Form from "../Form/Form";
-import Input from "../Input/Input";
 import Button from "../Button/Button";
+import Input from "../Input/Input";
+import { useState } from "react";
 
-export default function Profile ({user, isLoggedIn}) {
+export default function Profile ({user, onSignout}) {
+    const [isOnEdit, setIsOnEdit] = useState(false);
+
     function handleSubmit(evt) {
         evt.preventDefault();
     }
+
+    function handleEdit(evt) {
+        evt.preventDefault();
+        setIsOnEdit(true);
+    }
+
+    function resetEdit(evt) {
+        evt.preventDefault();
+        setIsOnEdit(false);
+    }
+
     return (
         <section className="profile">
-            {/* <h2 className="profile__title">{`Привет ${user.name}!`}</h2> */}
-            <Form
-                type={"editUser"}
-                name={"account"}
-                title={`Привет, ${user.name}!`}
-                titleButton={"Редактировать"}
-                isValid={"true"}
+            <form
+                className="profile__form"
+                name="account"
+                id="account-form"
                 onSubmit={handleSubmit}
+                isValid={true}
             >
-                <Input type={"editUser"} values={user.name} inputLabel={"Имя"}/>
-                <Input type={"editUser"} values={user.email} inputLabel={"E-mail"}/>
-            </Form>
-            <Button type={"signout"} titleButton={"Выйти из аккаунта"} />
+                <h2 className="profile__title">Привет, {user.name}!</h2>
+                <fieldset className="profile__fieldset">
+                    <Input type={"edit"} values={user.name} inputLabel={"name"} onEdit={isOnEdit}/>
+                    <div className="profile__inputdivider"></div>
+                    <Input type={"edit"} values={user.email} inputLabel={"email"} onEdit={isOnEdit}/>
+                </fieldset>
+                {!isOnEdit ? (
+                    <div className="profile__buttons">
+                        <Button type={"profile"} titleButton={"Редактировать"} isValid={true} onClick={handleEdit} />
+                        <Link to="/" className="profile__signout" onClick={onSignout}>Выйти из аккаунта</Link>
+                    </div>
+                    ) : (
+                    <div className="profile__buttons">
+                        <Button type={"logreg"} titleButton={"Сохранить"} isValid={true} onClick={handleSubmit} />
+                        <Button type={"profile"} titleButton={"Отменить редактирование"} isValid={true} onClick={resetEdit} />
+                    </div> 
+                    )}
+            </form>
         </section>
     )
+
+
 }
