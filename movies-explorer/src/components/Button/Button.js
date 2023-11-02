@@ -51,6 +51,15 @@ export default function Button ({buttonType, isBurgerClicked, onClickBurger, tit
             >
                 {titleButton}
             </button>
+        ),
+        more: (
+            <button
+                className="button button_type_more"
+                type="button"
+                aria-labelledby={titleButton}
+            >
+                {titleButton}
+            </button>
         )
     }[buttonType];
 }

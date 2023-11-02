@@ -7,16 +7,14 @@ import {
   Navigate,
 } from "react-router-dom";
 import Header from '../Header/Header';
-import Promo from '../Promo/Promo';
-import NavTab from '../NavTab/NavTab';
-import AboutProject from '../AboutProject/AboutProject';
-import Techs from '../Techs/Techs';
-import Portfolio from '../Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 import NotFound from '../NotFound/NotFound';
 import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import Main from '../Main/Main';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 
 function App() {
   const navigate = useNavigate();
@@ -52,12 +50,7 @@ function App() {
                   isBurgerClicked={isBurgerClicked}
                   onClickBurger={handleBurgerMenuClick}
                 />
-                <Promo />
-                <NavTab />
-                <AboutProject />
-                <Techs />
-                <Portfolio />
-                <Footer />
+                <Main />
               </>
           }/>
           <Route path="/signup" element={<Register/>}/>
@@ -65,20 +58,28 @@ function App() {
           <Route
             path="/movies" 
             element={
-              <Header 
+              <>
+                <Header 
                 isLoggedIn={loggedIn}
                 isBurgerClicked={isBurgerClicked}
                 onClickBurger={handleBurgerMenuClick}
-              />
+                />
+                <Movies />
+                <Footer />
+              </>
             }/>
           <Route
             path="/saved-movies" 
             element={
-              <Header 
+              <>
+                <Header 
                 isLoggedIn={loggedIn}
                 isBurgerClicked={isBurgerClicked}
                 onClickBurger={handleBurgerMenuClick}
-              />
+                />
+                <SavedMovies />
+                <Footer />
+              </>
             }/>
           <Route
             path="/profile" 
@@ -96,10 +97,10 @@ function App() {
               />
               </>
             }/>
-            <Route
+          <Route
             path="/404" 
             element={<NotFound />}
-            />
+          />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </div>

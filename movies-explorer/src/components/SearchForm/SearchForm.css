@@ -1,0 +1,130 @@
+.search {
+    margin: 0 auto 0;
+    width: calc(100% - 140px);
+    padding: 70px 0;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.search__form-container {
+    margin: 0 auto 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 9px;
+    background: #FFF;
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+}
+
+.search__input-icon {
+    position: relative;
+}
+
+.search__input-icon::before {
+    position: absolute;
+    content: "";
+    width: 34px;
+    height: 34px;
+    background-image: url(../../images/search_icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.search__input {
+    padding-left: 44px;
+    color: #A0A0A0;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.0)
+}
+
+.search__input:focus {
+    outline: none;
+}
+
+.search__button-block {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.search__go {
+    width: 34px;
+    height: 34px;
+    background-color: #3456F3;
+    background-image: url(../../images/find.svg);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: opacity .4s ease;
+}
+
+.search__go:hover {
+    opacity: .7;
+}
+
+.search__options {
+    margin-left: 19px;
+    height: 40px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #CBCBCB;
+}
+
+/* Стили для тублера короткометражек */
+
+.search__thumb {
+    position: relative;
+    width: 34px;
+    height: 14px;
+    border: none;
+    border-radius: 7px;
+    /* background-color: #EBEBEB; */
+    cursor: pointer;
+    transition: background-color .4s ease;
+}
+
+.search__thumb_inactive {
+    background-color: #EBEBEB;
+}
+
+.search__thumb_active {
+    background-color: #2BE080;
+}
+
+.search__thumb::before {
+    position: absolute;
+    top: 2px;
+    
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: all .4s ease;
+}
+
+.search__thumb_inactive::before {
+    left: 2px;
+    background-color: #F5F5F5;
+}
+
+.search__thumb_active::before {
+    left: 20px;
+    background-color: #FFF;
+}
+
+.search__option {
+    margin-left: 14px;
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}

@@ -1,0 +1,95 @@
+.card {
+    width: 270px;
+    height: 218px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, .05);
+    border-radius: 10px;
+}
+
+.card__image {
+    width: 100%;
+    height: 151px;
+    box-sizing: border-box;
+    display: block;
+    background-color: lightgray;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.card__caption {
+    padding: 14px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card__title {
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card__duration {
+    color: #A0A0A0;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+}
+
+.card__button {
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .09);
+    cursor: pointer;
+    transition: background-color .4s ease;
+}
+
+.card__button:hover {
+    scale: 1.2;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .3);
+    transition: scale box-shadow .1s ease;
+}
+
+.card__button_active {
+    background-color: #2BE080;
+}
+
+.card__button_inactive {
+    background-color: #F9F9F9;
+}
+
+.card__button_delete {
+    width: 16px;
+    height: 16px;
+    background: none;
+    background-image: url(../../images/delete_icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: opacity .4s ease;
+}
+
+.card__button_delete:hover {
+    opacity: .7;
+}
