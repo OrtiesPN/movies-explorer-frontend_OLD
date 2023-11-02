@@ -2,14 +2,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import "./Navigation.css";
 import Button from "../Button/Button";
-import Burger from '../Burger/Burger';
-import { useState } from 'react';
+import BurgerButton from '../BurgerButton/BurgerButton';
 
 export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,}) {
     const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
     const activeLink = `navigation__link_active_${isBurgerClicked ? "mobile" : "desktop"}`;
-
-    
 
     return(
         <>
@@ -24,14 +21,14 @@ export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,
                         </li>
                         <li className="navigation__item">
                             <Link to="/signin" className="navigation__link navigation__link_guest">
-                                <Button type="signinHeader"/>
+                                <Button buttonType="signinHeader"/>
                             </Link>
                         </li>
                     </ul>
             </nav>
             ) : isMobile ? (
                 <>
-                    <Burger isBurgerClicked={isBurgerClicked} onClickBurger={onClickBurger}/>
+                    <BurgerButton isBurgerClicked={isBurgerClicked} onClickBurger={onClickBurger} />
                     <nav className={`navigation navigation_type_mobile navigation_type_mobile${isBurgerClicked? "_visible" : "" }`} onClick={onClickBurger}>
                         <ul className="navigation__list navigation__list_user_mobile" onClick={(evt=> evt.stopPropagation())}>
                         <li className="navigation__item_mobile">
@@ -67,7 +64,7 @@ export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,
                                 className="navigation__link"
                                 onClick={onClickBurger}
                                 >
-                                    <Button type="accountHeader" /> 
+                                    <Button buttonType="accountHeader" /> 
                                 </NavLink>
                             </li>
                         </ul>
@@ -88,7 +85,7 @@ export default function Navigation({ isLoggedIn, isBurgerClicked, onClickBurger,
                             </li>
                             <li className="navigation__item navigation__item_logged">
                                 <NavLink to="/profile" className="navigation__link" >
-                                    <Button type="accountHeader" /> 
+                                    <Button buttonType="accountHeader" /> 
                                 </NavLink>
                             </li>
                         </ul>

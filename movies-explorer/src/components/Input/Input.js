@@ -1,6 +1,6 @@
 import './Input.css';
 
-export default function Input ({type, inputLabel, values, isInputValid, onEdit}) {
+export default function Input ({inputType, inputLabel, values, isInputValid, onEdit}) {
     return {
         logreg: (
             <label className='input__label_logreg'>
@@ -9,13 +9,13 @@ export default function Input ({type, inputLabel, values, isInputValid, onEdit})
                     className={`input input_type_logreg ${
                         isInputValid === undefined || isInputValid
                           ? ""
-                          : "input_error"
+                          : "input_type_logreg_error"
                       }`}
                     name={`user_${inputLabel}`}
                     type={inputLabel === "name" ? "text" : inputLabel}
                     required
                     value={values}
-                    readOnly
+                    readOnly  // dev markup option
                 >
                 </input>
                 <span className={`input__error ${
@@ -41,5 +41,5 @@ export default function Input ({type, inputLabel, values, isInputValid, onEdit})
                 </input>
             </label>
         ),
-    }[type] 
+    }[inputType] 
 }

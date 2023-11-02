@@ -4,10 +4,6 @@
     background-color: inherit;
 }
 
-.input_error {
-    color: #EE3465;
-}
-
 /* Стили инпутов на страницах логина и регистрации */
 
 .input_type_logreg {
@@ -26,8 +22,11 @@
     border-bottom: 1px solid #3456F3;
 }
 
+.input_type_logreg_error {
+    color: #EE3465;
+}
+
 .input__label_logreg {
-    margin-bottom: 24px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -38,10 +37,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
-
-.input__label_logreg:first-of-type {
-    margin-top: 40px;
 }
 
 /* Стили инпутов на странице редактирования профиля */
@@ -91,10 +86,4 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
-
-@media screen and (max-width: 440px) {
-    .input__label_logreg:first-of-type {
-        margin-top: 80px;
-    }
 }

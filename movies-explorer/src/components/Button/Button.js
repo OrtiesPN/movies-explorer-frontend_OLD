@@ -1,7 +1,7 @@
 import "./Button.css";
 import userLogo from "../../images/icon__COLOR_icon-main.svg"
 
-export default function Button ({type, isBurgerClicked, onClickBurger, titleButton, isValid, onClick}) {
+export default function Button ({buttonType, isBurgerClicked, onClickBurger, titleButton, isValid, onClick}) {
     return {
         signinHeader: (
             <button
@@ -20,18 +20,6 @@ export default function Button ({type, isBurgerClicked, onClickBurger, titleButt
             >
                 <img src={userLogo} alt="User" className="button__logo button__logo_user"/>
                 Аккаунт
-            </button>
-        ),
-        burger: (
-            <button
-                className={`button button_type_burger button_type_burger_${isBurgerClicked ? "close" : "menu"}`}
-                onClick={onClickBurger}
-                type="button"
-                aria-labelledby="Меню"
-            >
-                <div className={`button__bar_burger ${isBurgerClicked ? "button__bar_burger_clicked" : ""}`}></div>
-                <div className={`button__bar_burger ${isBurgerClicked ? "button__bar_burger_clicked" : ""}`}></div>
-                <div className={`button__bar_burger ${isBurgerClicked ? "button__bar_burger_clicked" : ""}`}></div>
             </button>
         ),
         logreg: (
@@ -64,7 +52,5 @@ export default function Button ({type, isBurgerClicked, onClickBurger, titleButt
                 {titleButton}
             </button>
         )
-    }[type];
+    }[buttonType];
 }
-
-// <img src={userLogo} alt="User" className="button__logo"/>

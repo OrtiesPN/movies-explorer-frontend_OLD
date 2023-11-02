@@ -13,21 +13,23 @@ export default function Login () {
             <div className="login__wrapper">
                 <Link to="/" className="login__home">
                     <img
-                    src={logo}
-                    alt="логотип Мovies"
-                    className="login__logo"
+                        src={logo}
+                        alt="логотип Мovies"
+                        className="login__logo"
                     />
                 </Link>
                 <Form
-                    type={"logreg"}
+                    buttonType={"logreg"}
                     name={"login"}
                     title={"Рады видеть!"}
                     titleButton={"Войти"}
                     isValid={"true"}
                     onSubmit={handleSubmit}
                 >
-                    <Input type={"logreg"} values={""} inputLabel={"email"}/>
-                    <Input type={"logreg"} values={""} inputLabel={"password"}/>
+                    <fieldset className="register__fieldset">
+                        <Input inputType={"logreg"} values={""} inputLabel={"email"} isInputValid={true}/>
+                        <Input inputType={"logreg"} values={""} inputLabel={"password"} isInputValid={true}/>
+                    </fieldset>
                 </Form>
                 <p className="login__caption">Ещё не зарегистрированы? <Link to="/signup" className="login__signup">Регистрация</Link></p>
             </div>

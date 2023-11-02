@@ -1,18 +1,20 @@
 .register {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .register__wrapper {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 70px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .register__home {
+    margin-bottom: 40px;
     align-self: flex-start;
     text-decoration: none;
     line-height: 0;
@@ -31,8 +33,18 @@
     object-position: center;
 }
 
-.register__caption {
+.register__fieldset {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.register__caption {
+    margin: 16px 0 0;
     color: #A0A0A0;
     text-align: center;
     font-size: 14px;
@@ -56,13 +68,21 @@
     opacity: .7;
 }
 
-@media screen and (max-width: 440px) {
-    .register {
-        justify-content: start;
+@media screen and (max-width: 768px) {
+    .register__wrapper {
+        padding: 232px 0;
     }
+
+}
+
+@media screen and (max-width: 440px) {
+    .register__wrapper {
+        padding: 56px 0 30px;
+    }
+
     .register__home {
-        margin-top: 56px;
         align-self: center;
+        margin-bottom: 50px;
     }
 
     .register__caption {
@@ -72,4 +92,11 @@
     .register__signin {
         font-size: 12px;
     }
+}
+
+@media screen and (min-height: 440px) {
+    .register__wrapper {
+        padding: 70px 0;
+    }
+
 }

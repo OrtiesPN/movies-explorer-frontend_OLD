@@ -14,8 +14,9 @@
     opacity: 0.8;
 }
 
+/* Стили для кнопки сабмита форм регистрации, логина, профиля */
+
 .button_type_logreg {
-    margin-top: auto;
     width: 100%;
     height: 45px;
     flex-shrink: 0;
@@ -34,6 +35,7 @@
     background: #F8F8F8;
 }
 
+/* Стили для кнопки открытия редактирования профиля */
 
 .button_type_profile {
     width: fit-content;
@@ -47,6 +49,8 @@
     line-height: 16px;
 }
 
+/* Стили для кнопки выхода из аккаунта */
+
 .button_type_signout {
     margin-bottom: 70px;
     width: fit-content;
@@ -59,6 +63,8 @@
     font-weight: 500;
     line-height: normal;
 }
+
+/* Стили для кнопок используемых в хэдере */
 
 .button_type_header-signin{
     width: 76px;
@@ -86,57 +92,6 @@
     border: 2px solid rgba(0 , 0, 0, .1);
 }
 
-.button_type_burger {
-    width: 44px;
-    height: 44px;
-    padding: 3px 8px;
-    background: none;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    align-items: center;
-    z-index: 100;
-}
-
-.button__bar_burger {
-    width: 100%;
-    height: 3px;
-    flex-shrink: 0;
-    background-color: #000;
-}
-
-.button__bar_burger:nth-child(1) {
-    rotate: 0deg;
-    transition: ease .4s;
-}
-
-.button__bar_burger:nth-child(2) {
-    scale: 100%;
-    transition: ease .4s;
-}
-
-.button__bar_burger:nth-child(3) {
-    rotate: 0deg;
-    transition: ease .4s;
-}
-
-.button__bar_burger_clicked:nth-child(1) {
-    rotate: 45deg;
-    translate: 0 .68em;
-    transition: ease .4s;
-}
-
-.button__bar_burger_clicked:nth-child(2) {
-    scale: 0%;
-    transition: ease .1s;
-}
-
-.button__bar_burger_clicked:nth-child(3) {
-    rotate: -45deg;
-    translate: 0 -.68em;
-    transition: ease .4s;
-}
-
 .button__logo_user {
     margin-right: 7px;
     width: 12px;
@@ -148,7 +103,6 @@
 
 @media screen and (max-width: 440px) {
     .button_type_logreg {
-        /* margin-top: 30vh; */
         font-size: 12px;
     }
 }
@@ -166,19 +120,5 @@
 
     .button_type_signout{
         font-size: 12px;
-    }
-
-    .button_type_burger {
-        width: 40px;
-        height: 43px;
-        padding: 5px 9px;
-    }
-
-    .button__bar_burger_clicked:nth-child(1) {
-        translate: 0 .57em;
-    }
-    
-    .button__bar_burger_clicked:nth-child(3) {
-        translate: 0 -.57em;
     }
 }

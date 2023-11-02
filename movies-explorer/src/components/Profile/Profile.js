@@ -32,19 +32,19 @@ export default function Profile ({user, onSignout}) {
             >
                 <h2 className="profile__title">Привет, {user.name}!</h2>
                 <fieldset className="profile__fieldset">
-                    <Input type={"edit"} values={user.name} inputLabel={"name"} onEdit={isOnEdit}/>
+                    <Input inputType={"edit"} values={user.name} inputLabel={"name"} onEdit={isOnEdit}/>
                     <div className="profile__inputdivider"></div>
-                    <Input type={"edit"} values={user.email} inputLabel={"email"} onEdit={isOnEdit}/>
+                    <Input inputType={"edit"} values={user.email} inputLabel={"email"} onEdit={isOnEdit}/>
                 </fieldset>
                 {!isOnEdit ? (
                     <div className="profile__buttons">
-                        <Button type={"profile"} titleButton={"Редактировать"} isValid={true} onClick={handleEdit} />
+                        <Button buttonType={"profile"} titleButton={"Редактировать"} isValid={true} onClick={handleEdit} />
                         <Link to="/" className="profile__signout" onClick={onSignout}>Выйти из аккаунта</Link>
                     </div>
                     ) : (
                     <div className="profile__buttons">
-                        <Button type={"logreg"} titleButton={"Сохранить"} isValid={true} onClick={handleSubmit} />
-                        <Button type={"profile"} titleButton={"Отменить редактирование"} isValid={true} onClick={resetEdit} />
+                        <Button buttonType={"logreg"} titleButton={"Сохранить"} isValid={true} onClick={handleSubmit} />
+                        <Button buttonType={"profile"} titleButton={"Отменить редактирование"} isValid={true} onClick={resetEdit} />
                     </div> 
                     )}
             </form>

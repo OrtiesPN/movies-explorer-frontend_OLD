@@ -1,18 +1,21 @@
 .login {
-    height: 100vh;
+    background-color: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .login__wrapper {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 70px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .login__home {
+    margin-bottom: 40px;
     align-self: flex-start;
     text-decoration: none;
     line-height: 0;
@@ -31,8 +34,18 @@
     object-position: center;
 }
 
-.login__caption {
+.login__fieldset {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.login__caption {
+    margin: 16px 0 0;
     color: #A0A0A0;
     text-align: center;
     font-size: 14px;
@@ -56,13 +69,21 @@
     opacity: .7;
 }
 
-@media screen and (max-width: 440px) {
-    .login {
-        justify-content: start;
+@media screen and (max-width: 768px) {
+    .login__wrapper {
+        padding: 232px 0;
     }
+
+}
+
+@media screen and (max-width: 440px) {
+    .login__wrapper {
+        padding: 56px 0 30px;
+    }
+
     .login__home {
-        margin-top: 56px;
         align-self: center;
+        margin-bottom: 50px;
     }
 
     .login__caption {
@@ -72,4 +93,11 @@
     .login__signup {
         font-size: 12px;
     }
+}
+
+@media screen and (min-height: 440px) {
+    .login__wrapper {
+        padding: 70px 0;
+    }
+
 }

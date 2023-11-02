@@ -1,8 +1,9 @@
-import "./Burger.css";
+import "./BurgerButton.css";
 
-export default function Burger({isBurgerClicked, onClickBurger}) {
-    <button
-                className="burger__button"  //{`burger__button burger__button_${isBurgerClicked ? "close" : "menu"}`}
+export default function BurgerButton({isBurgerClicked, onClickBurger}) {
+    return (
+        <button
+                className="burger__button"
                 onClick={onClickBurger}
                 type="button"
                 aria-labelledby="Меню"
@@ -10,5 +11,7 @@ export default function Burger({isBurgerClicked, onClickBurger}) {
                 <div className={`burger__bar ${isBurgerClicked ? "burger__bar_clicked" : ""}`}></div>
                 <div className={`burger__bar ${isBurgerClicked ? "burger__bar_clicked" : ""}`}></div>
                 <div className={`burger__bar ${isBurgerClicked ? "burger__bar_clicked" : ""}`}></div>
-            </button>
+        </button>
+    )
+    
 };
