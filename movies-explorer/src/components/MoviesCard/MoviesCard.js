@@ -14,7 +14,7 @@ export default function MoviesCard( props ) {
   
   return (
     <li className="card">
-        <a href={props.trailerLink} className="card__link">
+        <a href={props.trailerLink} className="card__link" target="_blank" rel="noreferrer">
             <img src={props.image} alt={props.nameEN} className="card__image" />
         </a>      
         <div className="card__caption">
@@ -23,7 +23,7 @@ export default function MoviesCard( props ) {
                 <span className="card__duration">{`${(props.duration - (props.duration % 60)) / 60}ч${props.duration % 60}м`}</span>
             </div>
             <button
-                className={props.savedMoviesSection ? "card__button_delete" : `card__button card__button"${isLiked ? "_active" : "_inactive"}`}
+                className={props.savedMoviesSection ? "card__button_delete" : `card__button card__button${isLiked ? "_active" : "_inactive"}`}
                 type="button"
                 aria-label="В коллекцию"
                 onClick={handleLikeClick}

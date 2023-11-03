@@ -34,7 +34,9 @@ export default function SearchForm() {
                         onClick={handleSearch}
                     >
                     </button>
-                    <div className="search__options">
+                    
+                </div>
+                <div className="search__options">
                         <button
                             className={`search__thumb search__thumb${searchShort? "_active" : "_inactive"}`}
                             type="button"
@@ -43,7 +45,6 @@ export default function SearchForm() {
                         </button>
                         <span className="search__option">Короткометражки</span>
                     </div>
-                </div>
             </div> 
         </form>
     )
