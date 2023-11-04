@@ -95,3 +95,9 @@
     }
 }
 
+@media screen and (min-height: 440px) {
+    .login__wrapper {
+        padding: 70px 0;
+    }
+
+}

@@ -99,3 +99,10 @@
         font-size: 12px;
     }
 }
+
+@media screen and (min-height: 440px) {
+    .profile {
+        padding: 70px 0;
+    }
+
+}

@@ -94,3 +94,9 @@
     }
 }
 
+@media screen and (min-height: 440px) {
+    .register__wrapper {
+        padding: 70px 0;
+    }
+
+}
